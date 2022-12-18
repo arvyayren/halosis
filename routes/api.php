@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\API\UserController;
 use App\Http\Controllers\API\CartController;
+use App\Http\Controllers\API\BarangController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,4 +25,7 @@ Route::get('cart', [CartController::class, 'index']);
 Route::middleware(['jwt.verify'])->group(function () {
     Route::get('cart_all', [CartController::class, 'cartAuth']);
     Route::get('user', [UserController::class, 'getAuthenticatedUser']);
+
+    Route::apiResource('barang', BarangController::class)
+    ->except(['create','edit']);
 });
