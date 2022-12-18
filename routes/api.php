@@ -20,12 +20,12 @@ use App\Http\Controllers\API\BarangController;
 
 Route::post('register', [UserController::class, 'register']);
 Route::post('login', [UserController::class, 'login']);
-Route::get('cart', [CartController::class, 'index']);
 
 Route::middleware(['jwt.verify'])->group(function () {
-    Route::get('cart_all', [CartController::class, 'cartAuth']);
     Route::get('user', [UserController::class, 'getAuthenticatedUser']);
 
     Route::apiResource('barang', BarangController::class)
-    ->except(['create','edit']);
+    ->except(['create','edit','show']);
+
+    Route::get('cart', [CartController::class, 'index']);
 });

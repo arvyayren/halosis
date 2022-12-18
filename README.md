@@ -9,7 +9,7 @@ Create Database and .env
 
   php artisan serve
 ```
-**Enjoy**
+**⚡️Enjoy**
 
 ## API Reference
 
@@ -41,6 +41,42 @@ Create Database and .env
 
 ```http
   GET /api/user
+```
+
+#### Get data barang
+
+```http
+  GET /api/barang
+```
+
+#### Store data barang
+
+```http
+  POST /api/barang
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `nama`      | `string` | **Required** |
+| `kode`      | `string` | **Required,Uniqe** |
+| `harga`      | `numeric` | **Required** |
+
+#### Update data barang
+
+```http
+  PUT|PATCH /api/barang/{$id}
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `nama`      | `string` | **Required** |
+| `kode`      | `string` | **Required,Uniqe** |
+| `harga`      | `numeric` | **Required** |
+
+#### Delete data barang
+
+```http
+  DELETE /api/barang/{$id}
 ```
 
 ## Tech Stack
