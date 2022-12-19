@@ -96,7 +96,7 @@ Create Database and .env
 | `kode_barang`      | `string` | **Required** |
 | `qty`      | `numeric` | **Required** |
 
-#### Update data barang in cart
+#### Update data qty barang in cart
 
 ```http
   PUT /api/cart/update
