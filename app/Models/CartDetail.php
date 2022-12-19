@@ -18,8 +18,4 @@ class CartDetail extends Model
     public function cart() {
         return $this->belongsTo('App\Models\Cart', 'cart_id');
     }
-
-    public function produk() {
-        return $this->belongsTo('App\Models\Barang', 'kode_barang');
-    }
 }

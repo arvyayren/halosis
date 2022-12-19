@@ -79,6 +79,51 @@ Create Database and .env
   DELETE /api/barang/{$id}
 ```
 
+#### Get data cart
+
+```http
+  GET /api/cart
+```
+
+#### Add to cart
+
+```http
+  POST /api/cart
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `kode_barang`      | `string` | **Required** |
+| `qty`      | `numeric` | **Required** |
+
+#### Update data barang in cart
+
+```http
+  PUT /api/cart/update
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `kode_barang`      | `string` | **Required** |
+| `qty`      | `numeric` | **Required** |
+
+#### Empty cart
+
+```http
+  POST /api/cart/empty
+```
+
+#### Checkout
+
+```http
+  POST /api/cart/checkout
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `nama_customer`      | `string` | **Required** |
+| `alamat`      | `string` | **Required** |
+
 ## Tech Stack
 
 **Framework:** Laravel

@@ -28,4 +28,8 @@ Route::middleware(['jwt.verify'])->group(function () {
     ->except(['create','edit','show']);
 
     Route::get('cart', [CartController::class, 'index']);
+    Route::post('cart', [CartController::class, 'store']);
+    Route::put('cart/update', [CartController::class, 'update']);
+    Route::post('cart/empty', [CartController::class, 'empty']);
+    Route::post('cart/checkout', [CartController::class, 'checkout']);
 });

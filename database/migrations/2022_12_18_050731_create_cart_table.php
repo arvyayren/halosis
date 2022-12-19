@@ -18,8 +18,8 @@ class CreateCartTable extends Migration
             $table->bigInteger('user_id');
             $table->enum('status', ['cart', 'paid'])->default('cart');
             $table->double('total',12, 2)->default(0);
-            $table->string('nama_customer');
-            $table->text('alamat');
+            $table->string('nama_customer')->nullable();
+            $table->text('alamat')->nullable();
             $table->timestamps();
         });
     }
